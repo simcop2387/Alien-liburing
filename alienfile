@@ -1,7 +1,5 @@
 use alienfile;
 
-die "This is only applicable to Linux or Linux compatible systems" unless $^O eq 'linux';
-
 plugin PkgConfig => pkg_name => 'liburing', minimum_version => '0.4';
 
 share {
