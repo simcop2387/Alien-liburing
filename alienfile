@@ -1,13 +1,13 @@
 use alienfile;
 
-plugin PkgConfig => pkg_name => 'liburing', minimum_version => '0.3';
+die "This is only applicable to Linux or Linux compatible systems" unless $^O eq 'linux';
 
-meta->prop->{out_of_source} = 1;
+plugin PkgConfig => pkg_name => 'liburing', minimum_version => '0.4';
 
 share {
-  start_url 'extern/liburing-0.3.tar.gz';
+  start_url 'extern/liburing-0.4_preview.a68caac2253dbb3c4c45a5bb65d76c54f6d83df5.tar.gz';
   plugin 'Fetch::Local';
   plugin Extract => format => 'tar.gz';
-  plugin 'Build::CMake';
   plugin 'Gather::IsolateDynamic';
+  build ['./configure --prefix=%{.install.prefix}', 'make', 'make install'];
 };
