@@ -1,2 +1,3 @@
 {{$NEXT}}
-
+  - Updated dist.ini for easier publishing
+  - Moved the OS check to dist.ini instead of alienfile, should behave better now on cpantesters
