@@ -4,7 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-#package::import	Alien-liburing-0.002/inc/Devel/AssertOS.pm	34;"	s
 #::expn	Alien-liburing-0.002/inc/Devel/AssertOS/Linux.pm	25;"	s
 #::matches	Alien-liburing-0.002/inc/Devel/AssertOS/Linux.pm	13;"	s
 #::os_is	Alien-liburing-0.002/inc/Devel/AssertOS/Linux.pm	15;"	s
@@ -17,6 +16,7 @@
 #kOS::die_unsupported()::os_is	Alien-liburing-0.002/inc/Devel/CheckOS.pm	77;"	s
 #kOS::die_unsupported()::os_isnt	Alien-liburing-0.002/inc/Devel/CheckOS.pm	99;"	s
 #re::os_is	Alien-liburing-0.002/inc/Devel/AssertOS/Android.pm	11;"	s
+#™×package::import	Alien-liburing-0.002/inc/Devel/AssertOS.pm	34;"	s
 Alien::liburing	Alien-liburing-0.002/lib/Alien/liburing.pm	1;"	p
 Alien::liburing	lib/Alien/liburing.pm	1;"	p
 Devel::AssertOS	Alien-liburing-0.002/inc/Devel/AssertOS.pm	2;"	p
