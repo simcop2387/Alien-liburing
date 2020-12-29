@@ -18,7 +18,7 @@ Alien::liburing - Alien wrapper for liburing
 
 =begin html
 
-<a href="https://github.com/simcop2387/Alient-liburing/actions?query=workflow%3ACI"><img src="https://github.com/simcop2387/Alien-liburing/workflows/CI/badge.svg"></a>
+<a href="https://github.com/simcop2387/Alien-liburing/actions?query=workflow%3A%22CI+-+Distzilla%22"><img src="https://github.com/simcop2387/Alien-liburing/workflows/CI%20-%20Distzilla/badge.svg"></a>
 
 =end html
 
