@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         kernel:
-          - 5.10
+          - "5.10"
         architecture:
           - X64
         perl-version:
