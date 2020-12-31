@@ -18,6 +18,7 @@ jobs:
       matrix:
         kernel:
           - "5.10"
+          - "5.6"
         architecture:
           - X64
         perl-version:

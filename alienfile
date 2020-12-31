@@ -7,5 +7,5 @@ share {
   plugin 'Fetch::Local';
   plugin Extract => format => 'tar.gz';
   plugin 'Gather::IsolateDynamic';
-  build ['./configure --prefix=%{.install.prefix}', 'make', 'make install'];
+  build ['./configure --prefix=%{.install.prefix}', 'make', 'make install', 'secondary_build.sh %{.install.prefix}'];
 };
