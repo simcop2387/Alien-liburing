@@ -1,4 +1,5 @@
 .build/
 ignored/
 extern/liburing/
+extern/suplib.tar.gz
 Alien-liburing-*
