@@ -10,8 +10,11 @@ share {
   build [
     #'./configure --prefix=%{.install.prefix}', 
     #'make', 
-    #'make install', 
-#    'tar -xvf %{.install.root}/../extern/sup/',
-#    'secondary_build.sh %{.install.prefix}'
+    #'make install',
+    'echo IN DIRECTORY $PWD',
+    'cd %{.install.root}', 
+    'tar -xvf %{.install.root}/../extern/suplib.tar.gz',
+    'echo IN DIRECTORY $PWD',
+    'secondary_build.sh %{.install.prefix}'
   ];
 };
