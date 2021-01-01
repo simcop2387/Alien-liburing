@@ -15,8 +15,13 @@ install: $(SO_FILE)
 
 $(SO_FILE): $(C_FILES)
 	# We setup a few -rpaths for linking so that we ensure we get the one we just built early in the process
-	# We also include -Wl,--no-as-needed since gcc is deciding we don't need libraries sometimes.  This appears to be the result of stupid issues with null pointers and gcc going "lul, you don't have any code anymore"
-	$(CC) -Wall -Wextra -Wnull-dereference -Werror -shared -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/dynamic/ -L$(STAGE_DIR)/dynamic/ -Wl,--no-as-needed -luring $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o $@ $^
+	$(CC) -Wall -Wextra -Wnull-dereference -Werror -shared -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/lib/ -L$(STAGE_DIR)/lib/ -luring $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o $@ $^
+
+test: $(SO_FILE) library_test.c
+	$(CC) -Wall -Wextra -Wnull-dereference -Werror -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/lib/ -L$(STAGE_DIR)/lib/ -luring -luringsup $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o library_test library_test.c
+
+xtest:
+	echo TODO check objdump for undefined instructions and ldd and other things
 
 clean:
 	rm -f $(SO_FILE)
