@@ -11,12 +11,11 @@ share {
     './configure --prefix=%{.install.prefix}', 
     'make', 
     'make install',
-    'echo IN DIRECTORY $PWD',
     'cd %{.install.root}', 
-    'tar -xvf %{.install.root}/../extern/suplib.tar.gz',
-    'echo IN DIRECTORY $PWD',
+    'tar -xf %{.install.root}/../extern/suplib.tar.gz',
     'cd suplib/',
     'make INSTALL_PREFIX=%{.install.prefix} STAGE_DIR=%{.install.stage} RUNTIME_DIR=%{.runtime.prefix}',
+    'make INSTALL_PREFIX=%{.install.prefix} STAGE_DIR=%{.install.stage} RUNTIME_DIR=%{.runtime.prefix} test',
     'make INSTALL_PREFIX=%{.install.prefix} STAGE_DIR=%{.install.stage} RUNTIME_DIR=%{.runtime.prefix} install',
   ];
 };

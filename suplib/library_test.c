@@ -1,5 +1,19 @@
-#include "library.h"
+#include <stdio.h>
+//#include <linux/fcntl.h>
+#include <fcntl.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
 #include <liburing.h>
+#include "library.h"
+
+// I don't know why this is happening, but it's not getting defined for me from fcntl.h
+#ifndef O_DIRECT
+#define O_DIRECT 00040000 
+#endif
 
 const int queue_depth = 4;
 
