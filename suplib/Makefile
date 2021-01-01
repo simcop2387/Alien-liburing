@@ -18,7 +18,8 @@ $(SO_FILE): $(C_FILES)
 	$(CC) -Wall -Wextra -Wnull-dereference -Werror -shared -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/lib/ -L$(STAGE_DIR)/lib/ -luring $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o $@ $^
 
 test: $(SO_FILE) library_test.c
-	$(CC) -Wall -Wextra -Wnull-dereference -Werror -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/lib/ -L$(STAGE_DIR)/lib/ -luring -luringsup $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o library_test library_test.c
+	$(CC) -Wall -Wextra -Wnull-dereference -Werror -Wl,-rpath,./ -Wl,-rpath,$(RUNTIME_DIR)/lib/dynamic -Wl,-rpath,$(STAGE_DIR)/lib/ -L$(STAGE_DIR)/lib/ -L. -Wl,--no-as-needed -luring -luringsup $(CFLAGS) $(LIBURING_INC) -fpic -fpie -o library_test library_test.c
+	./library_test
 
 xtest:
 	echo TODO check objdump for undefined instructions and ldd and other things
