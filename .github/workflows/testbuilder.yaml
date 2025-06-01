@@ -28,7 +28,7 @@ jobs:
           - '5.30'
           - '5.40'
           - 'latest'
-    runs-on: [self-hosted, "arch-${{ matrix.architecture }}", "kernel-${{ matrix.kernel }}" ]
+    runs-on: [self-hosted, "${{ matrix.architecture }}", "kernel-${{ matrix.kernel }}" ]
     container:
       image: perl:${{ matrix.perl-version }}
     name: Perl ${{ matrix.perl-version }}:Linux ${{matrix.kernel}}-${{ matrix.architecture }}
