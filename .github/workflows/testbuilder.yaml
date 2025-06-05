@@ -15,8 +15,8 @@ jobs:
       matrix:
         kernel:
           - "5.15"
-          - "6.5"
-          - '6.8'
+          - "6.8"
+          - '6.12'
           - '6.15'
         architecture:
           - X64
